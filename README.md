@@ -1,5 +1,2 @@
 ﻿# demo project
- git status
- git add .
- git commit -m "チロを追加"
-git push
+ 
