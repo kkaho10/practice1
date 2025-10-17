@@ -2,13 +2,39 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>私の愛犬（チロ）の紹介</title>
+    <title>私の愛犬のアルバム</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>チロ</h1>
-    <ul>
-        <li>年齢：10歳</li>
-    </ul>
+    <header>
+        <h1>私の愛犬のアルバム</h1>
+        <div class="controls">
+            <input id ="photoInput" type="file" accept="image/*" multiple>
+            <input id="captionInput" type="text" placeholder="キャプションを入力">
+            <button id ="addBtn">写真追加</button>
+            <button id ="clearBtn">全て削除</button>
+            <label for="sortSelect">並び替え</label>
+            <select id="sortSelect">
+                <option value="newest">新しい順</option>
+                <option value="oldest">古い順</option>
+           </select>
+       </div> 
+    </header>
+
+    <main>
+      <div id="gallery" class="gallery"></div>
+    </main>
+
+    #モーダル
+    <div id ="modal" class="modal" aria-hidden="true">
+        <div class="modal-inner">
+        <button id="closeModal" class="close">✕</button>
+        <img id="modalImg" src="" alt="">
+        <p id="modalCaption"></p>
+        <p id="modalDate" class="modal-date"></p>
+      </div>
+    </div>
+    <script src="scripts/main.js"></script>
 </body>
+
 </html>
