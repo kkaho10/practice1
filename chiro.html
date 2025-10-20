@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>私の愛犬のアルバム</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chiro — My Dog Album</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>My Dog Album</h1>
-        <div class="controls">
-            <input id ="photoInput" type="file" accept="image/*" multiple>
-            <input id="captionInput" type="text" placeholder="キャプションを入力">
-            <button id ="addBtn">写真追加</button>
-            <button id ="clearBtn">全て削除</button>
-            <label for="sortSelect">並び替え</label>
-            <select id="sortSelect">
-                <option value="newest">新しい順</option>
-                <option value="oldest">古い順</option>
-           </select>
-       </div> 
+  <div class="container">
+    <header class="hero">
+      <div class="hero-inner">
+        <h1 class="site-title"><span class="brand">Chiro</span> — My Dog Album</h1>
+        <p class="subtitle">Every lovely moment — capture & cherish</p>
+      </div>
+
+      <div class="controls glass" role="region" aria-label="album controls">
+        <input id="photoInput" type="file" accept="image/*" multiple>
+        <input id="captionInput" type="text" placeholder="Write a caption (e.g. Sunny walk)">
+        <button id="addBtn" class="btn primary">Add Photo</button>
+        <button id="clearBtn" class="btn">Clear All</button>
+
+        <label for="sortSelect" class="sr">Sort</label>
+        <select id="sortSelect" aria-label="Sort photos">
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
     </header>
 
     <main>
       <div id="gallery" class="gallery"></div>
     </main>
 
-    #モーダル
-    <div id ="modal" class="modal" aria-hidden="true">
-        <div class="modal-inner">
+    <!-- Modal -->
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-inner">
         <button id="closeModal" class="close">✕</button>
         <img id="modalImg" src="" alt="">
-        <p id="modalCaption"></p>
+        <p id="modalCaption" class="modal-caption"></p>
         <p id="modalDate" class="modal-date"></p>
       </div>
     </div>
-    <script src="scripts/main.js"></script>
-</body>
 
+    <footer class="site-footer">
+      <small>Made with ♥ — Chiro's Album</small>
+    </footer>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
 </html>
