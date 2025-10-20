@@ -1,39 +1,62 @@
 body {
-    background: #fffafc;
-    font-family: 'Comic Sans MS', 'Rounded Mplus 1c', sans-serif;
-    color: #6d4c41;
-    margin: 0;
-    padding: 40px;
+    background:#fffaf6;
+    font-family: "Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;
+    color:#4b2e2e;
+    margin:0;
+    padding:24px;
 }
 
-h1 {
-    background: #ffe4ee;
-    color: #d16ba5;
-    padding: 20px 40px;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px #f8bbd0;
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 30px;
+header{text-align:center;margin-bottom:18px;}
+
+h1{
+    display:inline-block;
+    background:#53a4ba;
+    color:#000000;
+    padding:14px 24px;
+    border-radius:24px;
+    box-shadow:0 6px 18px rgba(200,100,140,0.12);
+    font-family:'Caveat', cursive;
+    margin:0 0 12px 0;
 }
-ul {
-    background: #fff0f6;
-    border-radius: 20px;
-    box-shadow: 0 2px 8px #f8bbd0;
-    padding: 20px 30px;
-    width: fit-content;
-    margin: 0 auto;
-    font-size: 1.2em;
+.controls{ margin-top:10px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap; align-items:center; }
+
+input[type="text"]{ padding:8px 10px; border-radius:12px; border:1px solid #8eb8e1; background:#fff; }
+button{ padding:8px 12px; border-radius:12px; border:none; background:#ffb3d2; color:#5a2336; cursor:pointer; }
+button:hover{ filter:brightness(0.98); }
+
+select{ padding:6px 8px; border-radius:8px; border:1px solid #f0cde0; background:#fff; }
+
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+  gap:12px;
+  max-width:960px;
+  margin:18px auto;
+}
+.card{
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(200,100,140,0.08);
+  overflow:hidden;
+  position:relative;
 }
 
-li {
-    margin: 10px 0;
-    padding-left: 10px;
-    position: relative;
+.card img{ width:100%; height:140px; object-fit:cover; display:block; cursor:pointer; }
+.card .meta{ padding:8px 10px; font-size:0.9rem; color:#6b4a4a; display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.card .caption{ flex:1; margin-right:8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.card .date{ font-size:0.8rem; color:#9b7b7b; white-space:nowrap; }
+
+.delBtn{
+  position:absolute; top:8px; right:8px;
+  background:rgba(255,255,255,0.9); border-radius:8px; border:none; cursor:pointer;
+  padding:4px 6px;
 }
 
-li::before {
-    content: "🐾";
-    position: absolute;
-    left: -30px;
-}
+/* modal */
+.modal{ display:none; position:fixed; inset:0; background:rgba(10,10,10,0.6); align-items:center; justify-content:center; }
+.modal[aria-hidden="false"]{ display:flex; }
+.modal-inner{ background:#fff; padding:18px; border-radius:12px; max-width:90%; max-height:90%; overflow:auto; text-align:center; position:relative; }
+.modal-inner img{ max-width:100%; height:auto; border-radius:8px; }
+.close{ position:absolute; top:12px; right:12px; background:#ffdfe9; border:none; padding:6px 8px; border-radius:8px; cursor:pointer; }
+.modal-date{ color:#7a5b5b; font-size:0.9rem; margin-top:8px; }
+/* ...existing code... */
